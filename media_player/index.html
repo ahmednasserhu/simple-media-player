@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <section>
+        <form>
+            <h1>Change Email Address</h1>
+            <input type="text" name="userName" id="userName" placeholder="please enter your username" required pattern="[a-zA-Z]+">
+            <p>The required username could only be a sequence of alphabetic letters</p>
+            <input autocomplete="off" type="email" name="email" id="email" placeholder="please enter your email" required pattern="[a-zA-Z0-9]+@(yahoo|gmail|outlook).(com|net|gov|edu)">
+            <p>the required email address may not include any special chracters other than the @ sign</p>
+            <input type="submit" value="Submit">
+        </form>
+    </section> -->
+    <form>
+        <input type="text" id="username" name="username" placeholder="User" required pattern="[a-zA-Z0-9_]{2,10}" oninvalid="this.setCustomValidity('Username must be from 2 to 10 characters and can only contain letters, numbers, and underscores.')">
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- <section>
+        <label for="red">Red</label>
+        <input type="range" name="red" id="red" min="0" max="255" value="0">
+        
+        <label for="green">Green</label>
+        <input type="range" name="green" id="green" min="0" max="255" value="0">
+        
+        <label for="blue">Blue</label>
+        <input type="range" name="blue" id="blue" min="0" max="255" value="0">
+        
+        <h1 id="myText">this text color will be determined by the rgb values you will select above</h1>
+    </section> -->
+
+    <script>
+        // let redBar = document.getElementById("red");
+        // let greenBar = document.getElementById("green");
+        // let blueBar = document.getElementById("blue");
+        // let txt = document.getElementById("myText");
+
+        // function updateTextColor() {
+        //     let redValue = redBar.value;
+        //     let greenValue = greenBar.value;
+        //     let blueValue = blueBar.value;
+
+        //     txt.style.color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+        // }
+
+        // redBar.addEventListener('input',updateTextColor);
+        // greenBar.addEventListener('input', updateTextColor);
+        // blueBar.addEventListener('input', updateTextColor);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+#mediaPlayer {
+    border: 2px rgba(0, 0, 0, 0.25) solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    background-color: #C3E2C2;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#img{
+    width: 100%;
+    position: relative;
+    height: 40%;
+    object-fit: fill;  
+}
+
+#songName{
+    text-align: center;
+}
+
+button{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 0, 0.25);
+    /* border: 1px solid rgba(0, 0, 0, 0.15); */
+    transition: 0.5s;
+}
+
+#play_controlers{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+#music_controlers{
+    position: relative;
+    margin-top: 30px;
+    left: 15%;
+}
+
+#music_controlers input {
+    width: 60%;
+    display: block;
+    margin-top: 10px;
+}
+
+.control-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-container i {
+    margin-right: 10px;
+}
+

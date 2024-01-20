@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio  loop autoplay controls>
+        <source src="resources/1.mp3"/>
+        <!-- <source src="resources/1.ogg"/> -->
+
+        please update your browser 
+    </audio>
+    <button id="play">play</button>
+    <button id="pause">pause</button>
+    <button id="stop">stop</button>
+    <button id="mute">muted</button>
+    <input type="range" min="0" max="1"  step=".1" id="volume" value="1"/>
+    <input type="range" min="0" max="" id="duration" value="0" step=".1"/>
+    <input type="range" min=".5" max="2" id="rate" value="1"/>
+
+    
+    <script>
+        var a = document.getElementsByTagName('audio')[0];
+        var btnPlay = document.getElementById('play');
+        var btnPause = document.getElementById('pause');
+        var btnStop = document.getElementById('stop');
+        var btnMute = document.getElementById('mute');
+        var volumeRange = document.getElementById('volume');
+        var durationRange = document.getElementById('duration');
+        var speed = document.getElementById('rate');
+
+        btnPlay.addEventListener('click', function() {
+            a.play();
+        });
+
+        btnPause.addEventListener('click', function() {
+            a.pause();
+            updateDurationRange();
+        });
+
+        btnStop.addEventListener('click', function() {
+            a.load();
+            a.pause();
+            updateDurationRange();
+        });
+
+        btnMute.addEventListener('click', function() {
+            a.muted = !a.muted;
+        });
+
+        volumeRange.addEventListener('input', function() {
+            a.volume = volumeRange.value;
+        });
+
+        window.addEventListener('load', function() {
+            updateDurationRange();
+        });
+
+        a.addEventListener('loadedmetadata', function() {
+            updateDurationRange();
+        });
+
+        a.ontimeupdate = function() {
+            durationRange.value = a.currentTime;
+        };
+
+        durationRange.addEventListener('input', function() {
+            a.currentTime = durationRange.value;
+        });
+
+        speed.addEventListener('input', function() {
+            a.playbackRate = speed.value;
+        });
+
+        function updateDurationRange() {
+            durationRange.max = a.duration;
+            durationRange.value = a.currentTime;
+        }
+    </script>
+</body>
+</html>

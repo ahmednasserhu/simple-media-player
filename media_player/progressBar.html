@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        progress{
+            appearance: none;
+        }
+        progress::-webkit-progress-bar{
+            background-color: bisque;
+            box-shadow: 0 0 3px red inset;
+        }
+        progress::-webkit-progress-value{
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <input type="range" name="progress" id="progressValue" min="0" max="10" step="0.1" value="0">
+            <progress min="0" max="10" value="0" id="progressBar"></progress>
+            <span id="percentage">0%</span>
+        </div>
+    </section>
+
+    <script>
+        let progressValue = document.getElementById("progressValue");
+        let progressBar = document.getElementById('progressBar');
+        let percentageSpan = document.getElementById('percentage')
+
+        progressValue.addEventListener('input',function(){
+            progressBar.value = progressValue.value;
+            updatePercentage();
+        })
+
+        function updatePercentage() {
+            percentageSpan.textContent = `${Math.round((progressBar.value / progressBar.max) * 100)}%`;
+        }
+    </script>
+</body>
+</html>
